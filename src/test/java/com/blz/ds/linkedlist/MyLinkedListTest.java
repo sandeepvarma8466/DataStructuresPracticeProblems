@@ -150,4 +150,5 @@ public class MyLinkedListTest {
                 myLinkedList.tail.equals(myThirdNode);
         Assert.assertTrue(result);
     }
+
 }
