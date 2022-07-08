@@ -79,4 +79,21 @@ public class MyLinkedListTest {
         INode pop = myLinkedList.pop();
         Assert.assertEquals(myFirstNode,pop);
     }
+    //UC6 Ability To Delete The Lst Element In The Linked List Of Sequence 56->30->70
+    @Test
+    public void deleteTheLasttElementInTheSequence() {
+        System.out.println("\nDeleted Last number");
+        MyNode<Integer> myFirstNode= new MyNode<>(56);
+        MyNode<Integer> mySecondNode= new MyNode<>(30);
+        MyNode<Integer> myThirdNode= new MyNode<>(70);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.insert(myFirstNode, mySecondNode);
+        myLinkedList.popLast();
+        myLinkedList.printMyNodes();
+        boolean result = myLinkedList.head.equals(myFirstNode) &&
+                myLinkedList.head.getNext().equals(mySecondNode);
+        Assert.assertTrue(result);
+    }
 }
