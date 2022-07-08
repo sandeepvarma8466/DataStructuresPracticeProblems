@@ -96,4 +96,19 @@ public class MyLinkedListTest {
                 myLinkedList.head.getNext().equals(mySecondNode);
         Assert.assertTrue(result);
     }
+    //UC7
+    @Test
+    public void given3NumberWhenAppendedToLinkedListShouldSearch30() {
+        System.out.println("\nSearch number 30");
+        MyNode<Integer> myFirstNode= new MyNode<>(56);
+        MyNode<Integer> mySecondNode= new MyNode<>(30);
+        MyNode<Integer> myThirdNode= new MyNode<>(70);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.append(myThirdNode);
+        myLinkedList.insert(myFirstNode, mySecondNode);
+        myLinkedList.printMyNodes();
+        boolean result = myLinkedList.search(mySecondNode);
+        Assert.assertTrue(result);
+    }
 }
