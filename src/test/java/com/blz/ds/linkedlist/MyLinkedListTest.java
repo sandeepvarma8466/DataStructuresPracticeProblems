@@ -1,5 +1,6 @@
 package com.blz.ds.linkedlist;
 
+import com.blz.datastrucures.INode;
 import com.blz.datastrucures.MyLinkedList;
 import com.blz.datastrucures.MyNode;
 import org.testng.Assert;
@@ -60,5 +61,22 @@ public class MyLinkedListTest {
         boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode) && myLinkedList.tail.equals(myThirdNode);
 
         Assert.assertTrue(result);
+    }
+    //UC5 Ability To Delete The First Element In The Linked List Of Sequence 56->30->70
+    @Test
+    public void given3NumbersdeleteTheFirstElementInTheLinkedList() {
+        MyNode<Integer> myFirstNode = new MyNode<>(70);
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(56);
+
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.add(mySecondNode);
+        myLinkedList.add(myThirdNode);
+        myLinkedList.printMyNodes();
+        myLinkedList.pop();
+        myLinkedList.printMyNodes();
+        INode pop = myLinkedList.pop();
+        Assert.assertEquals(myFirstNode,pop);
     }
 }
