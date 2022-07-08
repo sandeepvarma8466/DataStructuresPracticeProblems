@@ -66,6 +66,17 @@ public class MyLinkedList<K> {
         }
         return found;
     }
+    public void searchThenInsert(INode searchNode, INode insertNode) {
+        MyLinkedList n = new MyLinkedList();
+        INode tempNode = head;
+        boolean inserted = false;
+        while(tempNode.getNext() != null) {
+            if(tempNode.getKey() == searchNode.getKey()) {
+                n.insert(searchNode,insertNode);
+            }
+            tempNode = tempNode.getNext();
+        }
+    }
 
     public void printMyNodes() {
         StringBuffer myNodes = new StringBuffer("My Nodes: ");
